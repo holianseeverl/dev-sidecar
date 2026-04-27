@@ -45,5 +45,6 @@
     "url": "https://github.com/docmirror/dev-sidecar/issues"
   },
   "homepage": "https://github.com/docmirror/dev-sidecar#readme",
-  "_note": "personal fork for learning purposes - upstream: docmirror/dev-sidecar"
+  "_note": "personal fork for learning purposes - upstream: docmirror/dev-sidecar",
+  "_local": "default proxy port changed to 9898 to avoid conflict with other tools on my machine"
 }
