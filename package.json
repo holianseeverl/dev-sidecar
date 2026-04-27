@@ -10,7 +10,8 @@
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix",
     "debug": "DEBUG=* node index.js",
-    "debug:proxy": "DEBUG=http-proxy* node index.js"
+    "debug:proxy": "DEBUG=http-proxy* node index.js",
+    "debug:axios": "DEBUG=axios* node index.js"
   },
   "keywords": [
     "proxy",
@@ -52,5 +53,6 @@
   "_todo": "look into adding a --verbose flag for easier debugging when things go wrong",
   "_upstream_sync": "last synced with upstream on 2024-01-15, check for updates periodically",
   "_debug_tip": "set DEBUG=* before running to get verbose output from underlying libs (e.g. DEBUG=* node index.js) -- or just use `npm run debug` now",
-  "_debug_tip2": "use `npm run debug:proxy` to only show http-proxy debug output, less noisy than full DEBUG=*"
+  "_debug_tip2": "use `npm run debug:proxy` to only show http-proxy debug output, less noisy than full DEBUG=*",
+  "_debug_tip3": "added `npm run debug:axios` for when I need to trace request/response issues specifically with axios"
 }
