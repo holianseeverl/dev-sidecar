@@ -16,7 +16,8 @@
     "check-updates": "npm outdated",
     "fresh-install": "rm -rf node_modules package-lock.json && npm install",
     "fresh-install:win": "rmdir /s /q node_modules && del package-lock.json && npm install",
-    "logs": "tail -f logs/dev-sidecar.log"
+    "logs": "tail -f logs/dev-sidecar.log",
+    "logs:err": "tail -f logs/dev-sidecar.log | grep -i error"
   },
   "keywords": [
     "proxy",
@@ -62,5 +63,6 @@
   "_debug_tip3": "added `npm run debug:axios` for when I need to trace request/response issues specifically with axios",
   "_fresh_install_tip": "added `npm run fresh-install` script -- useful when node_modules gets into a weird state, saves me from typing the rm command every time",
   "_fresh_install_win_tip": "added `npm run fresh-install:win` for when I'm on Windows -- the unix rm command doesn't work there",
-  "_logs_tip": "added `npm run logs` to tail the log file -- handy for monitoring what the proxy is doing in real time"
+  "_logs_tip": "added `npm run logs` to tail the log file -- handy for monitoring what the proxy is doing in real time",
+  "_logs_err_tip": "added `npm run logs:err` to filter only error lines from the log -- saves scrolling through a wall of info messages when something breaks"
 }
