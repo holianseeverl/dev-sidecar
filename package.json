@@ -21,7 +21,8 @@
     "logs:clear": "rm -f logs/dev-sidecar.log && echo 'log cleared'",
     "logs:warn": "tail -f logs/dev-sidecar.log | grep -iE 'warn|error'",
     "logs:tail": "tail -n 100 logs/dev-sidecar.log",
-    "logs:tail:200": "tail -n 200 logs/dev-sidecar.log"
+    "logs:tail:200": "tail -n 200 logs/dev-sidecar.log",
+    "logs:tail:500": "tail -n 500 logs/dev-sidecar.log"
   },
   "keywords": [
     "proxy",
@@ -67,5 +68,5 @@
   "_debug_tip3": "added `npm run debug:axios` for when I need to trace request/response issues specifically with axios",
   "_fresh_install_tip": "added `npm run fresh-install` script -- useful when node_modules gets into a weird state, saves me from typing the rm command every time",
   "_fresh_install_win_tip": "added `npm run fresh-install:win` for when I'm on Windows -- the unix rm command doesn't work there",
-  "_logs_tip": "added `npm run logs` to tail the log file, and logs:err/logs:warn for filtered views -- logs:tail shows last 100 lines, logs:tail:200 for more context"
+  "_logs_tip": "added `npm run logs:tail:500` for when 100 lines isn't enough context to figure out what went wrong"
 }
