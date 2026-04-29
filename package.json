@@ -18,7 +18,8 @@
     "fresh-install:win": "rmdir /s /q node_modules && del package-lock.json && npm install",
     "logs": "tail -f logs/dev-sidecar.log",
     "logs:err": "tail -f logs/dev-sidecar.log | grep -i error",
-    "logs:clear": "rm -f logs/dev-sidecar.log && echo 'log cleared'"
+    "logs:clear": "rm -f logs/dev-sidecar.log && echo 'log cleared'",
+    "logs:warn": "tail -f logs/dev-sidecar.log | grep -iE 'warn|error'"
   },
   "keywords": [
     "proxy",
@@ -65,6 +66,6 @@
   "_fresh_install_tip": "added `npm run fresh-install` script -- useful when node_modules gets into a weird state, saves me from typing the rm command every time",
   "_fresh_install_win_tip": "added `npm run fresh-install:win` for when I'm on Windows -- the unix rm command doesn't work there",
   "_logs_tip": "added `npm run logs` to tail the log file -- handy for monitoring what the proxy is doing in real time",
-  "_logs_err_tip": "added `npm run logs:err` to filter only error lines from the log -- saves scrolling through a wall of output",
-  "_logs_clear_tip": "added `npm run logs:clear` to wipe the log file when it gets too big -- was getting unwieldy after running for a few days"
+  "_logs_err_tip": "added `npm run logs:err` to filter only errors from the log -- less noise than tailing the full file",
+  "_logs_warn_tip": "added `npm run logs:warn` to catch both warnings and errors at once -- often warnings precede actual errors so useful to see both"
 }
