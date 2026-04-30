@@ -26,7 +26,8 @@
     "logs:today": "grep $(date +%Y-%m-%d) logs/dev-sidecar.log | tail -n 200",
     "logs:today:err": "grep $(date +%Y-%m-%d) logs/dev-sidecar.log | grep -i error",
     "logs:size": "du -sh logs/dev-sidecar.log 2>/dev/null || echo 'no log file yet'",
-    "logs:rotate": "mv logs/dev-sidecar.log logs/dev-sidecar.log.bak && echo 'log rotated to dev-sidecar.log.bak'"
+    "logs:rotate": "mv logs/dev-sidecar.log logs/dev-sidecar.log.bak && echo 'log rotated to dev-sidecar.log.bak'",
+    "logs:grep": "grep -n"
   },
   "keywords": [
     "proxy",
@@ -68,7 +69,6 @@
   "_todo": "look into adding a --verbose flag for easier debugging when things go wrong -- added start:verbose script as a workaround for now",
   "_upstream_sync": "last synced with upstream on 2024-01-15, check for updates periodically -- use `npm run check-updates` to see what's outdated",
   "_debug_tip": "set DEBUG=* before running to get verbose output from underlying libs (e.g. DEBUG=* node index.js) -- or just use `npm run debug` now",
-  "_debug_tip2": "use `npm run debug:proxy` to only show http-proxy debug output, less noisy than full DEBUG=*",
-  "_debug_tip3": "added `npm run debug:axios` for when I need to trace request/response issues",
-  "_logs_tip": "added logs:rotate script to manually rotate the log file when it gets too big -- logs can grow fast with DEBUG=* running"
+  "_debug_tip2": "use `npm run debug:proxy` to only show http-proxy debug output, less noisy",
+  "_debug_tip3": "use `npm run logs:grep <pattern> logs/dev-sidecar.log` to search log file for specific strings, handy for tracing a single domain"
 }
