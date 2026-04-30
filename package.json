@@ -23,7 +23,8 @@
     "logs:tail": "tail -n 100 logs/dev-sidecar.log",
     "logs:tail:200": "tail -n 200 logs/dev-sidecar.log",
     "logs:tail:500": "tail -n 500 logs/dev-sidecar.log",
-    "logs:today": "grep $(date +%Y-%m-%d) logs/dev-sidecar.log | tail -n 200"
+    "logs:today": "grep $(date +%Y-%m-%d) logs/dev-sidecar.log | tail -n 200",
+    "logs:today:err": "grep $(date +%Y-%m-%d) logs/dev-sidecar.log | grep -i error"
   },
   "keywords": [
     "proxy",
@@ -67,7 +68,6 @@
   "_debug_tip": "set DEBUG=* before running to get verbose output from underlying libs (e.g. DEBUG=* node index.js) -- or just use `npm run debug` now",
   "_debug_tip2": "use `npm run debug:proxy` to only show http-proxy debug output, less noisy than full DEBUG=*",
   "_debug_tip3": "added `npm run debug:axios` for when I need to trace request/response issues specifically with axios",
-  "_fresh_install_tip": "added `npm run fresh-install` script -- useful when node_modules gets into a weird state, saves me from typing the rm command every time",
-  "_fresh_install_win_tip": "added `npm run fresh-install:win` for when I'm on my work Windows machine",
-  "_logs_today_tip": "added `npm run logs:today` to quickly filter today's log entries -- handy when the log file gets big after running for a while"
+  "_fresh_install_tip": "added `npm run fresh-install` script -- useful when node_modules gets into a weird state, saves me from typing the rm command",
+  "_logs_tip": "added `npm run logs:today:err` -- handy for quickly checking if today had any errors without scrolling through the whole log"
 }
