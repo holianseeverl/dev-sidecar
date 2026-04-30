@@ -69,12 +69,13 @@ const DevSidecar = {
     log.info('Shutting down DevSidecar services...')
 
     try {
+      // stop proxy first, then dns - order matters to avoid dangling requests
       await proxyServer.stop()
       await dnsServer.stop()
       log.info('All services stopped')
     } catch (err) {
       log.error('Error during shutdown:', err)
-      throw err
+      // don't rethrow here - best effort shutdown, we want to clean up as much as possible
     }
   },
 
