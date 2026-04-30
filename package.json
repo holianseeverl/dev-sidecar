@@ -27,7 +27,8 @@
     "logs:today:err": "grep $(date +%Y-%m-%d) logs/dev-sidecar.log | grep -i error",
     "logs:size": "du -sh logs/dev-sidecar.log 2>/dev/null || echo 'no log file yet'",
     "logs:rotate": "mv logs/dev-sidecar.log logs/dev-sidecar.log.bak && echo 'log rotated to dev-sidecar.log.bak'",
-    "logs:grep": "grep -n"
+    "logs:grep": "grep -n",
+    "logs:archive": "tar -czf logs/archive-$(date +%Y%m%d).tar.gz logs/dev-sidecar.log.bak 2>/dev/null && echo 'archived old log'"
   },
   "keywords": [
     "proxy",
@@ -69,6 +70,6 @@
   "_todo": "look into adding a --verbose flag for easier debugging when things go wrong -- added start:verbose script as a workaround for now",
   "_upstream_sync": "last synced with upstream on 2024-01-15, check for updates periodically -- use `npm run check-updates` to see what's outdated",
   "_debug_tip": "set DEBUG=* before running to get verbose output from underlying libs (e.g. DEBUG=* node index.js) -- or just use `npm run debug` now",
-  "_debug_tip2": "use `npm run debug:proxy` to only show http-proxy debug output, less noisy",
-  "_debug_tip3": "use `npm run logs:grep <pattern> logs/dev-sidecar.log` to search log file for specific strings, handy for tracing a single domain"
+  "_debug_tip2": "use `npm run debug:proxy` to only show http-proxy debug output, much less noisy than DEBUG=*",
+  "_logs_tip": "logs:rotate + logs:archive combo is handy when the log file gets huge -- rotate first, then archive the .bak file"
 }
